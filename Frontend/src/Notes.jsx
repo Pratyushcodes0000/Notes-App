@@ -11,7 +11,7 @@ const Notes = () => {
     
     const [activeSection, setActiveSection] = useState("all-notes");
     const [isLoading, setIsLoading] = useState(true);
-    //edit note
+    //editing notes
     const [editingNote, setEditingNote] = useState(null);
     const [editTitle, setEditTitle] = useState("");
     const [editContent, setEditContent] = useState("");
@@ -20,7 +20,9 @@ const Notes = () => {
    
 
     const createNote = async () => {
-        if (!title.trim() || !content.trim()) return;
+        if (!title.trim() || !content.trim()) {
+            return;
+        }
         
         try {
             setIsLoading(true);
