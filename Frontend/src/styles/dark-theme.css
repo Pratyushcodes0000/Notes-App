@@ -1,0 +1,161 @@
+:root {
+  /* Dark theme colors */
+  --bg-primary: #1a1c2e;
+  --bg-secondary: #2d3250;
+  --text-primary: #e4e6f0;
+  --text-secondary: #a5b4fc;
+  --accent-color: #a5b4fc;
+  --border-color: rgba(228, 230, 240, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --card-bg: #2d3250;
+  --input-bg: #1a1c2e;
+  --hover-bg: rgba(228, 230, 240, 0.1);
+  --active-bg: rgba(165, 180, 252, 0.15);
+}
+
+/* Apply dark theme to body */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Main content area */
+.main-content {
+  background-color: var(--bg-primary);
+}
+
+/* Input section */
+.input-section {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.input-section:hover {
+  box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+/* Form inputs */
+.title, .content {
+  background-color: var(--input-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.title:focus, .content:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(165, 180, 252, 0.15);
+}
+
+/* Note cards */
+.note-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.note-card:hover {
+  box-shadow: 0 15px 35px var(--shadow-color);
+  border-color: var(--accent-color);
+}
+
+.note-card h3 {
+  color: var(--text-primary);
+}
+
+.note-card p {
+  color: var(--text-secondary);
+}
+
+.note-card span {
+  color: var(--text-secondary);
+  border-top-color: var(--border-color);
+}
+
+/* Buttons */
+.button {
+  background: var(--accent-color);
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(165, 180, 252, 0.3);
+}
+
+.button:hover {
+  background: #8b9cfc;
+  box-shadow: 0 6px 20px rgba(165, 180, 252, 0.4);
+}
+
+.button:disabled {
+  background: #4a4f6d;
+  color: #6b7280;
+}
+
+/* Note actions */
+.note-action-btn {
+  color: var(--text-secondary);
+}
+
+.note-action-btn:hover {
+  background: var(--hover-bg);
+  color: var(--accent-color);
+}
+
+/* Empty state */
+.empty-state {
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.empty-state h3 {
+  color: var(--text-primary);
+}
+
+/* Edit card overlay */
+.edit-card-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.edit-card {
+  background-color: var(--card-bg);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.edit-card-header {
+  border-bottom-color: var(--border-color);
+}
+
+.edit-card-header h2 {
+  color: var(--text-primary);
+}
+
+.edit-card-close {
+  color: var(--text-secondary);
+}
+
+.edit-card-close:hover {
+  background: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+.edit-card-actions .cancel-btn {
+  background: var(--hover-bg);
+  color: var(--text-secondary);
+}
+
+.edit-card-actions .cancel-btn:hover {
+  background: var(--active-bg);
+}
+
+.edit-card-actions .save-btn {
+  background: var(--accent-color);
+  color: var(--text-primary);
+}
+
+.edit-card-actions .save-btn:hover {
+  background: #8b9cfc;
+}
+
+.edit-card-actions .save-btn:disabled {
+  background: #4a4f6d;
+  color: #6b7280;
+} 

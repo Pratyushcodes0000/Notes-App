@@ -1,0 +1,377 @@
+:root {
+  /* Light theme colors */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --accent-color: #4dabf7;
+  --border-color: #e9ecef;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --card-bg: #ffffff;
+  --input-bg: #f8f9fa;
+  --hover-bg: rgba(77, 171, 247, 0.1);
+  --active-bg: rgba(77, 171, 247, 0.15);
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: var(--bg-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.input-section {
+  background: var(--card-bg);
+  padding: 2rem;
+  padding-right: 5em;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  margin-bottom: 2.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+}
+
+.input-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.title, .content {
+  width: 100%;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.title:focus, .content:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(77, 171, 247, 0.15);
+  background-color: var(--bg-secondary);
+}
+
+.content {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.button {
+  background: var(--accent-color);
+  color: var(--bg-secondary);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 15px rgba(77, 171, 247, 0.3);
+}
+
+.button:hover {
+  background: #339af0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(77, 171, 247, 0.4);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(77, 171, 247, 0.3);
+}
+
+.button:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.output {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.note-card {
+  background: var(--card-bg);
+  padding: 1.75rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px var(--shadow-color);
+  border-color: var(--accent-color);
+}
+
+.note-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.note-card p {
+  margin: 0 0 1.25rem 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.note-card span {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.note-actions {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  gap: 0.75rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.note-card:hover .note-actions {
+  opacity: 1;
+}
+
+.note-action-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.note-action-btn:hover {
+  background: var(--hover-bg);
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.empty-state h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+  }
+  
+  .main-content {
+    padding: 1.5rem;
+  }
+  
+  .output {
+    grid-template-columns: 1fr;
+  }
+  
+  .edit-card {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+ 
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .input-section {
+    padding: 1.5rem;
+  }
+  
+  .note-card {
+    padding: 1.25rem;
+  }
+  
+  .edit-card-actions {
+    flex-direction: column;
+  }
+  
+  .edit-card-actions button {
+    width: 100%;
+  }
+}
+
+.edit-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+}
+
+.edit-card-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.edit-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 20px 40px var(--shadow-color);
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.edit-card-overlay.active .edit-card {
+  transform: translateY(0);
+}
+
+.edit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.edit-card-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 600;
+}
+
+.edit-card-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+}
+
+.edit-card-close:hover {
+  background: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+.edit-card-content {
+  margin-bottom: 1.5rem;
+}
+
+.edit-card-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.edit-card-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-card-actions .cancel-btn {
+  background: var(--hover-bg);
+  color: var(--text-secondary);
+  border: none;
+}
+
+.edit-card-actions .cancel-btn:hover {
+  background: var(--active-bg);
+}
+
+.edit-card-actions .save-btn {
+  background: var(--accent-color);
+  color: var(--bg-secondary);
+  border: none;
+}
+
+.edit-card-actions .save-btn:hover {
+  background: #339af0;
+}
+
+.edit-card-actions .save-btn:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+} 
